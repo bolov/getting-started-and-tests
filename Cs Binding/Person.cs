@@ -19,6 +19,7 @@ namespace Cs_Binding
 
         public Person()
         {
+            PersonName = "<nope>";
         }
 
         public Person(string value)

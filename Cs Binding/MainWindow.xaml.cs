@@ -39,6 +39,12 @@ namespace Cs_Binding
         /// </summary>
         private Person Person2;
 
+
+        /// <summary>
+        /// reference to (3) object created in XAML context
+        /// </summary>
+        private Person Person3;
+
         public MainWindow()
         {
 
@@ -49,6 +55,9 @@ namespace Cs_Binding
 
             // (2) get the object in XAML resources
             Person2 = FindResource("Person2") as Person;
+
+            // (3) get the object in XAML context
+            Person3 = (FindName("Person3Text") as TextBlock).DataContext as Person;
 
             ConsoleAllocator.ShowIfDebug();
 
@@ -71,6 +80,14 @@ namespace Cs_Binding
             string txt = String.Format("Person2 {0}", RandomString(3));
 
             Person2.PersonName = txt;
+        }
+
+        // (3)
+        private void Change3ButtonClick(object sender, RoutedEventArgs e)
+        {
+            string txt = String.Format("Person3 {0}", RandomString(3));
+
+            Person3.PersonName = txt;
         }
 
         private string RandomString(int length)
