@@ -16,10 +16,8 @@ using System.Windows.Shapes;
 
 
 /*
- * Most online turorials create an object in xaml
- * This shows how to bind to an object created in the code
- *
- * https://stackoverflow.com/questions/19981966/wpf-xaml-binding-to-object-created-in-code-behind
+ * (1) object created in code
+ * (2) object created in XAML resources
  */
 
 namespace Cs_Binding
@@ -31,22 +29,48 @@ namespace Cs_Binding
     public partial class MainWindow : Window
     {
         /// <summary>
-        /// Source of the binding
+        /// source for (1) object created in code
         /// must be a property (as oposed to a field) for the binding to work
         /// </summary>
         public Person Person1 { get; set; } = new Person("Nobody1");
 
+        /// <summary>
+        /// reference to (2) object created in XAML resources
+        /// </summary>
+        private Person Person2;
+
         public MainWindow()
         {
+
+            // needed for (1)
             this.DataContext = this;
 
             InitializeComponent();
+
+            // (2) get the object in XAML resources
+            Person2 = FindResource("Person2") as Person;
 
             ConsoleAllocator.ShowIfDebug();
 
             TextWriterTraceListener myWriter = new TextWriterTraceListener(System.Console.Out);
             Debug.Listeners.Add(myWriter);
+        }
 
+        // (1)
+        private void Change1ButtonClick(object sender, RoutedEventArgs e)
+        {
+            string txt = String.Format("Person1 {0}", RandomString(3));
+
+            Person1.PersonName = txt;
+        }
+
+
+        // (2)
+        private void Change2ButtonClick(object sender, RoutedEventArgs e)
+        {
+            string txt = String.Format("Person2 {0}", RandomString(3));
+
+            Person2.PersonName = txt;
         }
 
         private string RandomString(int length)
@@ -61,13 +85,5 @@ namespace Cs_Binding
             return s;
         }
 
-        private void Change1Button(object sender, RoutedEventArgs e)
-        {
-            string txt = String.Format("Person1 {0}", RandomString(3));
-
-            Person1.PersonName = txt;
-
-            Debug.WriteLine(Person1.PersonName);
-        }
     }
 }

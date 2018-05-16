@@ -6,11 +6,21 @@
         xmlns:local="clr-namespace:Cs_Binding"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
+
+    <Window.Resources>
+        <local:Person x:Key="Person2" PersonName="Nobody 2"/>
+    </Window.Resources>
+
     <Grid>
         <TextBlock x:Name="Person1Text" HorizontalAlignment="Left" Margin="53,64,0,0" MinWidth="100" TextWrapping="Wrap" VerticalAlignment="Top"
             Text="{Binding Path=Person1.PersonName}"
                    />
-        <Button x:Name="ChangeButton" Content="Change1" HorizontalAlignment="Left" Margin="192,64,0,0" VerticalAlignment="Top" Width="75" Click="Change1Button"/>
+        <Button x:Name="Change1Button" Content="Change1" HorizontalAlignment="Left" Margin="192,64,0,0" VerticalAlignment="Top" Width="75" Click="Change1ButtonClick"/>
+
+        <TextBlock x:Name="Person2Text" HorizontalAlignment="Left" Margin="53,107,0,0" MinWidth="100" TextWrapping="Wrap" VerticalAlignment="Top"
+            Text="{Binding Source={StaticResource Person2}, Path=PersonName}"
+                   />
+        <Button x:Name="Change2Button" Content="Change2" HorizontalAlignment="Left" Margin="192,107,0,0" VerticalAlignment="Top" Width="75" Click="Change2ButtonClick"/>
 
     </Grid>
 </Window>
