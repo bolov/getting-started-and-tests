@@ -34,9 +34,7 @@ namespace Cs_Binding
         /// Source of the binding
         /// must be a property (as oposed to a field) for the binding to work
         /// </summary>
-        public Person ThePerson { get; set; } = new Person("Nobody");
-
-        private int n = 0;
+        public Person Person1 { get; set; } = new Person("Nobody1");
 
         public MainWindow()
         {
@@ -51,14 +49,25 @@ namespace Cs_Binding
 
         }
 
-        private void ChangeButtonClick(object sender, RoutedEventArgs e)
+        private string RandomString(int length)
         {
-            string txt = String.Format("Person {0}", n);
-            ++n;
+            string s = "";
+            Random r = new Random();
 
-            ThePerson.PersonName = txt;
+            for (int i = 0; i < length; ++i)
+            {
+                s += (char)('a' + r.Next('z' - 'a'));
+            }
+            return s;
+        }
 
-            Debug.WriteLine(ThePerson.PersonName);
+        private void Change1Button(object sender, RoutedEventArgs e)
+        {
+            string txt = String.Format("Person1 {0}", RandomString(3));
+
+            Person1.PersonName = txt;
+
+            Debug.WriteLine(Person1.PersonName);
         }
     }
 }

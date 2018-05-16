@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="53,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            Text="{Binding Path=ThePerson.PersonName}"
+        <TextBlock x:Name="Person1Text" HorizontalAlignment="Left" Margin="53,64,0,0" MinWidth="100" TextWrapping="Wrap" VerticalAlignment="Top"
+            Text="{Binding Path=Person1.PersonName}"
                    />
-        <Button x:Name="ChangeButton" Content="Change" HorizontalAlignment="Left" Margin="192,64,0,0" VerticalAlignment="Top" Width="75" Click="ChangeButtonClick"/>
+        <Button x:Name="ChangeButton" Content="Change1" HorizontalAlignment="Left" Margin="192,64,0,0" VerticalAlignment="Top" Width="75" Click="Change1Button"/>
 
     </Grid>
 </Window>
