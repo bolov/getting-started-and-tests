@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cs events", "Cs events\Cs e
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cs Binding", "Cs Binding\Cs Binding.csproj", "{7C9422C9-8348-4126-AD6B-D4DBD99A1E81}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cs TcpServer", "Cs TcpServer\Cs TcpServer.csproj", "{FCFFE4E9-40AD-42EA-8D4B-4076DBCA726D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cs TcpClient", "Cs TcpClient\Cs TcpClient.csproj", "{D545BC0C-3FAE-4D52-8864-033992C0BB16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{7C9422C9-8348-4126-AD6B-D4DBD99A1E81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C9422C9-8348-4126-AD6B-D4DBD99A1E81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C9422C9-8348-4126-AD6B-D4DBD99A1E81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCFFE4E9-40AD-42EA-8D4B-4076DBCA726D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCFFE4E9-40AD-42EA-8D4B-4076DBCA726D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCFFE4E9-40AD-42EA-8D4B-4076DBCA726D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCFFE4E9-40AD-42EA-8D4B-4076DBCA726D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D545BC0C-3FAE-4D52-8864-033992C0BB16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D545BC0C-3FAE-4D52-8864-033992C0BB16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D545BC0C-3FAE-4D52-8864-033992C0BB16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D545BC0C-3FAE-4D52-8864-033992C0BB16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
